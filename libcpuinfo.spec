@@ -70,7 +70,9 @@ rm -rf $RPM_BUILD_ROOT
 %doc LICENSE README.md
 %attr(755,root,root) %{_bindir}/cache-info
 %attr(755,root,root) %{_bindir}/cpu-info
+%ifarch %{ix86} %{x8664} x32
 %attr(755,root,root) %{_bindir}/cpuid-dump
+%endif
 %attr(755,root,root) %{_bindir}/isa-info
 %attr(755,root,root) %{_libdir}/libcpuinfo.so
 
